@@ -152,6 +152,7 @@
 <ul>
 <li>無制約最適化問題に対する凖ニュートン法</li>
 <li>大規模な無制約最適化問題に対する非線形共役勾配法</li>
+<li>微分不可能な点を含む凸関数最小化問題に対する近接勾配法</li>
 </ul>
 <hr />
 <h3 id="_2">経歴<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -188,15 +189,15 @@
 <h3 id="_5">本年度の参加イベント<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <h4 id="_6">今後のイベント(予定)<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p><ul>
-<li><a href="https://ismp2018.sciencesconf.org/">23<sup>rd</sup> International Symposium on Mathematical Programming (ISMP)</a>, Bordeaux，France,  July 1--6.</li>
 <li><a href="https://sites.google.com/site/narushimalab/krims2018">RIMS 高度情報化社会に向けた数理最適化の新潮流</a>, 京都大学,  8 月 6--7 日.</li>
-<li><a href="http://www.orsj.or.jp/~ssor2018/index.html">日本OR学会 創立60周年記念事業 本部SSOR 2018</a>, 水上温泉 源泉湯の宿 松乃井[<a href="http://www.matsunoi.com/access/">Access</a>] , 8 月 29--31 日.</li>
+<li><a href="http://www.orsj.or.jp/~ssor2018/index.html">日本OR学会 創立60周年記念事業 本部SSOR 2018</a>, 水上温泉 源泉湯の宿 松乃井[<a href="http://www.matsunoi.com/access/">Access</a>], 8 月 29--31 日.</li>
 </ul></p>
 <h4 id="_7">参加したイベント<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <p><ul>
-<li><a href="http://www.ism.ac.jp/~mirai/opta/seminar02.html">日本オペレーションズ・リサーチ学会 研究部会 最適化とその応用 (OPTA) 第 2 回研究会 </a>，中央大学,  5 月 12 日.</li>
-<li><a href="http://www.ism.ac.jp/~mirai/opta/seminar03.html">日本オペレーションズ・リサーチ学会 研究部会 最適化とその応用 (OPTA) 第 3 回研究会 </a>，中央大学,  5 月 26--27 日.</li>
-<li><a href="http://www.ism.ac.jp/~mirai/opta/tsukuba18.html">最適化とその応用 —未来を担う若手研究者の集い 2018—</a>，筑波大学， 6 月 9--10 日.</li>
+<li><a href="http://www.ism.ac.jp/~mirai/opta/seminar02.html">日本オペレーションズ・リサーチ学会 研究部会 最適化とその応用 (OPTA) 第 2 回研究会</a>, 中央大学, 5 月 12 日.</li>
+<li><a href="http://www.ism.ac.jp/~mirai/opta/seminar03.html">日本オペレーションズ・リサーチ学会 研究部会 最適化とその応用 (OPTA) 第 3 回研究会</a>, 中央大学, 5 月 26--27 日.</li>
+<li><a href="http://www.ism.ac.jp/~mirai/opta/tsukuba18.html">最適化とその応用 —未来を担う若手研究者の集い 2018—</a>，筑波大学, 6 月 9--10 日.</li>
+<li><a href="https://ismp2018.sciencesconf.org/">23<sup>rd</sup> International Symposium on Mathematical Programming (ISMP)</a>, Bordeaux, France, July 1--6.</li>
 </ul></p>
 <p><details><summary>昨年度参加したイベント</summary>
 <ul>
@@ -227,7 +228,8 @@
 <li><b>中山舜民</b>, 成島康史, 矢部博,
 ''無制約最適化問題に対する Broyden family に基づいた非線形共役勾配法",
 <i><a href="http://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/kokyuroku.html" target="_blank">京都大学数理解析研究所講究録</a>
-数理最適化の発展：モデル化とアルゴリズム</i>, (2018)，掲載予定．</li></p>
+<a href="http://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/2069.html" target="_blank">数理最適化の発展：モデル化とアルゴリズム</a></i>, <b>2069</b> (2018)，pp.194--206. 
+[<a href="http://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/2069-20.pdf">PDF</a>]</li></p>
 <li><b>中山舜民</b>, 成島康史, 矢部博,
 ''Memoryless quasi-Newton methods based on Broyden family with sufficient descent property for unconstrained optimization",
 <i>統計数理研究所共同研究リポート 「最適化: モデリングとアルゴリズム 30」</i>, <b>407</b> (2018), pp.108--123.</li>
@@ -247,8 +249,12 @@
 <h4 id="_11">国際会議での口頭発表<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <p><ol class="reversed">
 <li><Sup>*</Sup><b>Shummin Nakayama</b>, Yasushi Narushima, Hiroshi Yabe,
+''Inexact proximal memoryless spectral-scaling MBFGS mehtod",
+<i><a href="https://ismp2018.sciencesconf.org/" target="_blank">23<sup>rd</sup> International Symposium on Mathematical Programming</a></i>, Bordeaux, France, July 5, 2018.</li></p>
+<li><Sup>*</Sup><b>Shummin Nakayama</b>, Yasushi Narushima, Hiroshi Yabe,
 ''Global Convergence of Memoryless Quasi-Newton Methods Based on Broyden Family for Unconstrained Optimization",
-<i><a href="http://meetings.siam.org/program.cfm?CONFCODE=OP17" target="_blank">2017 SIAM Conference on Optimization</a></i>, Vancouver, Canada, May 24, 2017.</li></p>
+<i><a href="http://meetings.siam.org/program.cfm?CONFCODE=OP17" target="_blank">2017 SIAM Conference on Optimization</a></i>, Vancouver, Canada, May 24, 2017.</li>
+
 <li><Sup>*</Sup><b>Shummin NAKAYAMA</b>, Yasushi NARUSHIMA, Hiroshi YABE,
 ''A memoryless sized symmetric rank-one method with sufficient descent property for unconstrained optimization",
 <i><a href="http://www.iccopt2016.tokyo/index.html" target="_blank">The Fifth International Conference on Continuous Optimization of the Mathematical Optimization Society</a></i>, Tokyo, Japan, August 11, 2016.</li>
@@ -368,5 +374,5 @@ E-mail: 1416702 &lt;at&gt; ed.tus.ac.jp (&lt;at&gt; を @ に変えてお使い�
 
 <!--
 MkDocs version : 0.17.2
-Build Date UTC : 2018-06-10 13:41:38
+Build Date UTC : 2018-07-06 05:20:31
 -->

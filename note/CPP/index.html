@@ -258,6 +258,9 @@ ofs &lt;&lt; 5 &lt;&lt; &quot;, &quot;&lt;&lt; 6 &lt;&lt; endl;
 と入力するとCSVファイルは</p>
 <p><img alt="csv1" src="../../img/csv1.png" /></p>
 <p>となります。また
+<div class="codehilite"><pre><span></span>#include &lt;iomanip&gt;
+</pre></div>
+というヘッダーを加えて
 <div class="codehilite"><pre><span></span>double z = 1.2345678901234567;
 ofs &lt;&lt; std::setprecision(16) &lt;&lt; z &lt;&lt;endl;
 </pre></div>

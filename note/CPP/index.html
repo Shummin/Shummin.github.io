@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
-    <title>今シーズン - S. Nakayama</title>
+    <title>数値解析演習用(C++) - S. Nakayama</title>
 
     <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -92,19 +92,19 @@
         
             
 <li >
-    <a href="../../note/MkDocs/">HP更新</a>
+    <a href="../MkDocs/">HP更新</a>
 </li>
 
         
             
 <li >
-    <a href="../../note/note/">便利なやつ</a>
+    <a href="../note/">便利なやつ</a>
 </li>
 
         
             
-<li >
-    <a href="../../note/CPP/">数値解析演習用(C++)</a>
+<li class="active">
+    <a href="./">数値解析演習用(C++)</a>
 </li>
 
         
@@ -118,14 +118,14 @@
     <ul class="dropdown-menu">
         
             
-<li class="active">
-    <a href="./">今シーズン</a>
+<li >
+    <a href="../../hobby/baseball2019/">今シーズン</a>
 </li>
 
         
             
 <li >
-    <a href="../baseball_total/">過去(2018~)</a>
+    <a href="../../hobby/baseball_total/">過去(2018~)</a>
 </li>
 
         
@@ -146,12 +146,12 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="next" href="../../note/CPP/">
+                        <a rel="next" href="../note/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../baseball_total/">
+                        <a rel="prev" href="../../hobby/baseball2019/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -164,54 +164,112 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#2019">2019年の野球観戦記録</a></li>
-            <li class="second-level"><a href="#_1">ペナントレース</a></li>
+        <li class="first-level active"><a href="#c">数値解析演習用　プログラミングに便利なやつ(C++)</a></li>
+            <li class="second-level"><a href="#c_1">C++で行列とベクトルを定義</a></li>
                 
-            <li class="second-level"><a href="#_2">オープン戦</a></li>
+                <li class="third-level"><a href="#c_2">C++でベクトルや行列を定義するために必要な必要なヘッダーファイル</a></li>
+                <li class="third-level"><a href="#_1">ベクトル、行列の定義</a></li>
+                <li class="third-level"><a href="#_2">ベクトルや行列の値を簡単に入力する方法</a></li>
+            <li class="second-level"><a href="#_3">乱数の生成</a></li>
                 
+                <li class="third-level"><a href="#_4">乱数を生成する方法</a></li>
+                <li class="third-level"><a href="#01">0~1の乱数生成</a></li>
+            <li class="second-level"><a href="#csv">CSVに吐き出す</a></li>
+                
+                <li class="third-level"><a href="#ccsv">C++でCSVに吐き出すために必要な必要なヘッダーファイル</a></li>
+                <li class="third-level"><a href="#csv_1">CSVファイルに書き込む</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h2 id="2019">2019年の野球観戦記録<a class="headerlink" href="#2019" title="Permanent link">&para;</a></h2>
-<p>千葉ロッテマリーンズファンの観戦記録です</p>
-<h3 id="_1">ペナントレース<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>現在 0勝2敗</p>
-<table>
-<thead>
-<tr>
-<th>日程</th>
-<th align="right">スコア</th>
-<th align="center"></th>
-<th align="left"></th>
-<th>球場</th>
-<th>座席</th>
-<th>備考</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>5/5</td>
-<td align="right">&#9733;ロッテ</td>
-<td align="center"><a href="https://baseball.yahoo.co.jp/npb/game/2019050505/top"> 1-4 </a></td>
-<td align="left">日本ハム&#9734;</td>
-<td>ZOZOマリン</td>
-<td>１塁側内野</td>
-<td>現地観戦、今年も黒星スタート</td>
-</tr>
-<tr>
-<td>5/31</td>
-<td align="right">&#9733;ロッテ</td>
-<td align="center"><a href="https://baseball.yahoo.co.jp/npb/game/2019053104/top"> 2-3 </a></td>
-<td align="left">西武&#9734;</td>
-<td>ZOZOマリン</td>
-<td>１塁側内野</td>
-<td>あと１本が出なくて勝てない</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_2">オープン戦<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>観戦なし</p></div>
+<h2 id="c">数値解析演習用　プログラミングに便利なやつ(C++)<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<h3 id="c_1">C++で行列とベクトルを定義<a class="headerlink" href="#c_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<h4 id="c_2">C++でベクトルや行列を定義するために必要な必要なヘッダーファイル<a class="headerlink" href="#c_2" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>#include &lt;vector&gt;
+</pre></div>
+
+<h4 id="_1">ベクトル、行列の定義<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p><div class="codehilite"><pre><span></span>int n = 2; //行列のサイズを定義
+// 行列を宣言 
+vector&lt;vector&lt;double&gt; &gt; A(n,vector&lt;double&gt; (n));//nxn行列Aを定義（変数はdouble型）
+vector&lt;double&gt; b(n) ; //n次元ベクトルbを定義
+// 実際に行列やベクトルに値を代入
+A[0][0] = 1; A[1][1] = 1; // A = [1 0;0 1]という単位行列になる
+b[0] = 1 ; b[1] ; //b=[1 1]^Tというベクトルになる
+</pre></div>
+行列やベクトルの第１成分はプログラム上では0からindexが始まるので注意</p>
+<p>ベクトルのサイズは
+<div class="codehilite"><pre><span></span>int n = A.size();  //Aの行数
+int m = A[0].size();//Aの列数
+</pre></div>
+で読み取れます。</p>
+<h4 id="_2">ベクトルや行列の値を簡単に入力する方法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p><div class="codehilite"><pre><span></span>vector&lt;vector&lt;double&gt; &gt; A{{1,2,1,2},
+                          {2,4,2,3},
+                          {1,2,3,4},
+                          {4,3,8,1}};
+vector&lt;double&gt; b{7,7,7,7};
+</pre></div>
+このように書けば簡単に具体的な行列を簡単に定義できる。
+しかし、この書き方はC++11以降から対応しているため、環境によっては
+<div class="codehilite"><pre><span></span>$g++ -std=c++11 ***.cpp
+</pre></div>
+とコンパイルする必要がある。</p>
+</blockquote>
+<p>参考サイト
+<a href="https://www.sejuku.net/blog/48660">https://www.sejuku.net/blog/48660</a></p>
+<h3 id="_3">乱数の生成<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<blockquote>
+<h4 id="_4">乱数を生成する方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>rand()という関数は0～32767の整数を返します。
+<div class="codehilite"><pre><span></span>x = rand();
+</pre></div></p>
+<h4 id="01">0~1の乱数生成<a class="headerlink" href="#01" title="Permanent link">&para;</a></h4>
+<p>rand関数で生成される整数の最大値RAND_MAXで割ることで0~1の乱数を生成できます。ここで、rand()もRAND_MAXも整数型ですのでキャストを忘れずに
+<div class="codehilite"><pre><span></span>x = (double)rand()/RAND_MAX;
+</pre></div></p>
+</blockquote>
+<p>参考サイト
+<a href="https://webkaru.net/clang/display-random-numbers-between-0-1/">https://webkaru.net/clang/display-random-numbers-between-0-1/</a></p>
+<h3 id="csv">CSVに吐き出す<a class="headerlink" href="#csv" title="Permanent link">&para;</a></h3>
+<blockquote>
+<h4 id="ccsv">C++でCSVに吐き出すために必要な必要なヘッダーファイル<a class="headerlink" href="#ccsv" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+using std::endl;
+using std::ofstream;
+</pre></div>
+
+<h4 id="csv_1">CSVファイルに書き込む<a class="headerlink" href="#csv_1" title="Permanent link">&para;</a></h4>
+<p>データを書き込むCSVファイルを指定する。
+<div class="codehilite"><pre><span></span>ofstream ofs(&quot;hoge.csv&quot;);  // ファイルを指定する
+&#39;&#39;&#39;
+ofsという名前の変数にデータを書き込むことでhoge.csvにデータが入力されます。
+&#39;&#39;&#39;
+ofs &lt;&lt; 1 &lt;&lt; &quot;, &quot;&lt;&lt; 2 &lt;&lt; endl;
+</pre></div>
+otfに"1"という値を入力して","でセルを区切ります。
+endlは改行を意味します。
+例えば
+<div class="codehilite"><pre><span></span>ofs &lt;&lt; 1 &lt;&lt; &quot;, &quot;&lt;&lt; 2 &lt;&lt; endl;
+ofs &lt;&lt; 3 &lt;&lt; &quot;, &quot;&lt;&lt; 4 &lt;&lt; endl;
+ofs &lt;&lt; 5 &lt;&lt; &quot;, &quot;&lt;&lt; 6 &lt;&lt; endl;
+</pre></div>
+と入力するとCSVファイルは</p>
+<p><img alt="csv1" src="../../img/csv1.png" /></p>
+<p>となります。また
+<div class="codehilite"><pre><span></span>double z = 1.2345678901234567;
+ofs &lt;&lt; std::setprecision(16) &lt;&lt; z &lt;&lt;endl;
+</pre></div>
+とすると</p>
+<p><img alt="csv1" src="../../img/csv2.png" /></p>
+<p>のように、入力する桁数を指定することもできます。</p>
+<p>scientific:指数表記</p>
+<p>setprecision:小数点表記</p>
+</blockquote>
+<p>参考サイト
+<a href="https://marycore.jp/prog/cpp/stream-format-float/">https://marycore.jp/prog/cpp/stream-format-float/</a></p></div>
         
     </div>
 

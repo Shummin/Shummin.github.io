@@ -167,6 +167,8 @@
         <li class="first-level active"><a href="#_1">便利なコマンドのメモ書き（自分用）</a></li>
             <li class="second-level"><a href="#nkf">nkfを使った文字コード変換する方法</a></li>
                 
+            <li class="second-level"><a href="#platexshift_jistex">ターミナル上で（platex）でShift_JISのTeXファイルをコンパイルする方法</a></li>
+                
             <li class="second-level"><a href="#pngeps">png等をepsに変換する方法</a></li>
                 
             <li class="second-level"><a href="#_2">ディレクトリの大文字小文字を変換する</a></li>
@@ -209,6 +211,23 @@
 <p><div class="codehilite"><pre><span></span>$ nkf -u --overwrite *.tex
 </pre></div>
 </p>
+</blockquote>
+<p>nkfをインストールする方法・その他オプション等をまとめたサイト
+<a href="https://qiita.com/kou_bacchus/items/6448608ee03b0a71dcd4">https://qiita.com/kou_bacchus/items/6448608ee03b0a71dcd4</a></p>
+</blockquote>
+<h3 id="platexshift_jistex">ターミナル上で（platex）でShift_JISのTeXファイルをコンパイルする方法<a class="headerlink" href="#platexshift_jistex" title="Permanent link">&para;</a></h3>
+<p>platexでコンパイルする場合、デフォルトの文字コードは UTF-8 なので以下のようにオプションでShift_JISに指定する必要があります。</p>
+<blockquote>
+<div class="codehilite"><pre><span></span>$ platex -kanji=sjis SJIFのファイル.tex
+$ dvipdfmx SJIFのファイル.dvi 
+</pre></div>
+
+<blockquote>
+<p>【他のオプション】</p>
+<p>-kanji=jis    JISコードでコンパイルする</p>
+<p>-kanji=euc    EUCコードでコンパイルする</p>
+<p>-kanji=sjis   Shift-JISコードでコンパイルする</p>
+<p>-kanji=utf    UTF8コードでコンパイルするる</p>
 </blockquote>
 </blockquote>
 <h3 id="pngeps">png等をepsに変換する方法<a class="headerlink" href="#pngeps" title="Permanent link">&para;</a></h3>

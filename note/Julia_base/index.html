@@ -58,7 +58,9 @@
 
             <!-- Main title -->
 
-            <a class="navbar-brand" href="../..">S. Nakayama</a>
+            
+              <a class="navbar-brand" href="../..">S. Nakayama</a>
+            
         </div>
 
         <!-- Expanded navigation -->
@@ -154,181 +156,31 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#julia">Julia 基礎 備忘録</a></li>
-            <li class="second-level"><a href="#_1">基本的なこと</a></li>
-                
-                <li class="third-level"><a href="#_2">基本的な演算</a></li>
-                <li class="third-level"><a href="#for">for文, 条件分岐</a></li>
-                <li class="third-level"><a href="#_3">関数の定義</a></li>
-            <li class="second-level"><a href="#julia_1">Juliaで嬉しいこと</a></li>
-                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h2 id="julia">Julia 基礎 備忘録<a class="headerlink" href="#julia" title="Permanent link">&para;</a></h2>
-<h3 id="_1">基本的なこと<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>セッション終了は Ctrl + D, コメントは#</p>
-<h4 id="_2">基本的な演算<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code>julia &gt; 10^2 #べき乗
-100
-
-julia&gt; 13/3 #除算
-4.333333333333333
-
-julia&gt; 25//100 #有理数
-1//4
-
-julia &gt; x = 2;
-julia &gt; 2x + 1 #変数を使った積は積記号を省略できる(ただし変数が後)
-5
-
-julia &gt; typeof(x) #typeofで型を確認
-Int64
-julia &gt; x = 2.0;
-julia &gt; typeof(x) 
-Float64
-
-julia &gt; pi #円周率
-π = 3.1415926535897...
-julia &gt; sin(2pi/3) #三角関数も使える
-0.8660254037844387
-
-julia &gt; 2+3im #虚数(im)も使える
-2 + 3im
-julia &gt; typeof(2+3im) 
-Complex{Int64}
-
-julia &gt; x = [1.2 0;1 -1] #ベクトル, 行列を定義
-2×2 Array{Float64,2}:
- 1.2   0.0
- 1.0  -1.0
-
-julia &gt; A = [1 2;3 4]; # ; を使うと出力されない
-julia &gt; b = [1 2]&#39; ; # &#39; が転置を意味する
-julia &gt; A\b # Ax=b が解ける
-2×1 Array{Float64,2}:
- 0.0
- 0.5
-julia &gt; A * ans == b
- true
-
-julia &gt; x = [1 2 3]
-julia &gt; x.^2 # ^の前に. をつけることで成分だけ２乗する
-1×3 Array{Int64,2}:
-1 4 9;
-julia &gt; abs.(-x) # 関数も同様に.をつけられる（ただし関数は()の前)
-1×3 Array{Int64,2}:
-1 2 3
-</code></pre></div>
-補足サイト
-<a href="https://hshindo.github.io/julia-doc-ja-v0.6/manual/mathematical-operations.html">https://hshindo.github.io/julia-doc-ja-v0.6/manual/mathematical-operations.html</a>,
-<a href="https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/">https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/</a> (LinearAlgebraのサイト,固有値や行列の分解などに)</p>
-<h4 id="for">for文, 条件分岐<a class="headerlink" href="#for" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code>julia &gt; for i in 1:3
-        println(i)
-        end
-1
-2
-3
-
-julia &gt; for i in [1.2 -2.3 3.4]
-        println(i)
-        end
-1.2
--2.3
-3.4
-
-julia &gt; [i*j for i in 1:2, j in 1:3]  #内包表記も可能
-2×3 Array{Int64,2}:
- 1  2  3
- 2  4  6
-
-julia &gt; [i for i in 1:6 if i%2==1] ＃条件も加えられる
-3-element Array{Int64,1}:
- 1
- 3
- 5
-
-julia&gt; for (i, j) in zip(1:3, 6:9) #zip関数で2つの配列を同時に
-       print(i, &quot; - &quot;, j,  &quot;\n&quot;)
-       end
-1 - 6
-2 - 7
-3 - 8
-
-julia &gt; k = 10; # if elseif else
-julia &gt; if k % 15 == 0
-            println(&quot;15の倍数&quot;)
-        elseif k % 5 == 0
-            println(&quot;5の倍数&quot;)
-        elseif k % 3 == 0
-            println(&quot;3の倍数&quot;)
-        else
-            println(k)
-        end
-</code></pre></div>
-参考サイト
-<a href="http://nullbyte.hatenablog.com/entry/2015/05/28/011054">http://nullbyte.hatenablog.com/entry/2015/05/28/011054</a></p>
-<h4 id="_3">関数の定義<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code>julia &gt; f(x,y) = x + y
-f (generic function with 1 method)
-
-julia &gt; f(2,3)
-5
-
-julia &gt; function g(x,y)
-          return x * y 
-          x + y # return 以降は無視される
-        end
-g (generic function with 1 method)
-
-julia &gt; g(2,3)
-6
-
-julia &gt; function func(x::Float64)::Float64 #引数や関数値に型を指定することもできる
-           return 1
-        end
-julia &gt; func(2.0) # 戻り値はFloat64
-1.0
-julia &gt; func(2) #引数が整数のためエラーになる
-ERROR: MethodError: no method matching func(::Int64)
-</code></pre></div>
-参考サイト
-<a href="https://hshindo.github.io/julia-doc-ja-v0.6/manual/functions.html">https://hshindo.github.io/julia-doc-ja-v0.6/manual/functions.html</a></p>
-</blockquote>
-<h3 id="julia_1">Juliaで嬉しいこと<a class="headerlink" href="#julia_1" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p><strong>Python のように書き易く，Cのように速い</strong></p>
-<p><strong>MATLABの感覚で書ける</strong></p>
-<p><strong>行列, ベクトル計算が速い</strong></p>
-<p><strong>分数が使える (//を使用)</strong></p>
-<p><strong>記号が使える</strong></p>
-<blockquote>
-<p>\pi
-と入力してtabを押せば
-π
-になる</p>
-<p>記号を変数にすることができる</p>
-</blockquote>
-</blockquote></div>
+</div>
         
         
     </div>
 
-    <footer class="col-md-12 text-center">
-        
-        <hr>
-        <p>
-        <small>Copyright 2022, Shummin Nakayama.</small><br>
-        
-        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
-        </p>
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Copyright 2022, Shummin Nakayama.</small><br>
+            
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
 
-        
-        
-    </footer>
+          
+          
+      </footer>
+    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../../js/bootstrap-3.0.3.min.js"></script>
 

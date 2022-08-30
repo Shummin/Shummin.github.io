@@ -58,7 +58,9 @@
 
             <!-- Main title -->
 
-            <a class="navbar-brand" href="../..">S. Nakayama</a>
+            
+              <a class="navbar-brand" href="../..">S. Nakayama</a>
+            
         </div>
 
         <!-- Expanded navigation -->
@@ -154,106 +156,31 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#_1">便利なコマンドのメモ書き（自分用）</a></li>
-            <li class="second-level"><a href="#nkf">nkfを使った文字コード変換する方法</a></li>
-                
-            <li class="second-level"><a href="#platexshift_jistex">ターミナル上で（platex）でShift_JISのTeXファイルをコンパイルする方法</a></li>
-                
-            <li class="second-level"><a href="#pngeps">png等をepsに変換する方法</a></li>
-                
-            <li class="second-level"><a href="#_2">ディレクトリの大文字小文字を変換する</a></li>
-                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h2 id="_1">便利なコマンドのメモ書き（自分用）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>ただの備忘録です．主にmac環境の話です．</p>
-<h3 id="nkf">nkfを使った文字コード変換する方法<a class="headerlink" href="#nkf" title="Permanent link">&para;</a></h3>
-<p>「UTF-8」環境の人（自分）が「Shift-JIS」環境の人にデータを送る（または受け取る）際に，
-文字コードが違うので開くときに困りますよね．</p>
-<blockquote>
-<p>nkfコマンドの書式</p>
-<div class="highlight"><pre><span></span><code>$ nkf [options] [file]
-</code></pre></div>
-
-<blockquote>
-<p>【nkfコマンドの主なオプション】</p>
-<p>-u    出力時にバッファリングを行わない</p>
-<p>-j    JISコードに変換する</p>
-<p>-e    EUCコードに変換する</p>
-<p>-s    Shift-JISコードに変換する</p>
-<p>-w    UTF8コードに変換する</p>
-<p>-g 文字コード自動判別の結果を表示</p>
-<p>–overwrite 引数のファイルに直接上書き</p>
-</blockquote>
-<p>使用例</p>
-<blockquote>
-<p>文字コードを表示する</p>
-<p><div class="highlight"><pre><span></span><code>$ nkf -g hoge.tex
-</code></pre></div>
-</p>
-<p>UTF-8に変換</p>
-<p><div class="highlight"><pre><span></span><code>$ nkf -w --overwrite hoge.tex
-</code></pre></div>
-</p>
-<p>カレントディレクトリのファイル全てのtexファイルをUTF-8に変換</p>
-<p><div class="highlight"><pre><span></span><code>$ nkf -u --overwrite *.tex
-</code></pre></div>
-</p>
-</blockquote>
-<p>nkfをインストールする方法・その他オプション等をまとめたサイト
-<a href="https://qiita.com/kou_bacchus/items/6448608ee03b0a71dcd4">https://qiita.com/kou_bacchus/items/6448608ee03b0a71dcd4</a></p>
-</blockquote>
-<h3 id="platexshift_jistex">ターミナル上で（platex）でShift_JISのTeXファイルをコンパイルする方法<a class="headerlink" href="#platexshift_jistex" title="Permanent link">&para;</a></h3>
-<p>platexでコンパイルする場合、デフォルトの文字コードは UTF-8 なので以下のようにオプションでShift_JISに指定する必要があります。</p>
-<blockquote>
-<div class="highlight"><pre><span></span><code>$ platex -kanji=sjis SJIFのファイル.tex
-$ dvipdfmx SJIFのファイル.dvi 
-</code></pre></div>
-
-<blockquote>
-<p>【他のオプション】</p>
-<p>-kanji=jis    JISコードでコンパイルする</p>
-<p>-kanji=euc    EUCコードでコンパイルする</p>
-<p>-kanji=sjis   Shift-JISコードでコンパイルする</p>
-<p>-kanji=utf    UTF8コードでコンパイルするる</p>
-</blockquote>
-</blockquote>
-<h3 id="pngeps">png等をepsに変換する方法<a class="headerlink" href="#pngeps" title="Permanent link">&para;</a></h3>
-<p>texで画像を貼り付ける際にpng等のファイルをepsに変換する方法</p>
-<blockquote>
-<p>convertコマンドをインストールする．</p>
-<div class="highlight"><pre><span></span><code>$ sudo apt-get install imagemagick
-</code></pre></div>
-
-<p>hoge.pngからhoge.epsを作成する．</p>
-<div class="highlight"><pre><span></span><code>$ convert hoge.png hoge.eps
-</code></pre></div>
-
-</blockquote>
-<h3 id="_2">ディレクトリの大文字小文字を変換する<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<blockquote>
-<div class="highlight"><pre><span></span><code> for f in * ; do mv $f `echo $f | tr A-Z a-z`; done
-</code></pre></div>
-
-</blockquote></div>
+</div>
         
         
     </div>
 
-    <footer class="col-md-12 text-center">
-        
-        <hr>
-        <p>
-        <small>Copyright 2022, Shummin Nakayama.</small><br>
-        
-        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
-        </p>
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Copyright 2022, Shummin Nakayama.</small><br>
+            
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
 
-        
-        
-    </footer>
+          
+          
+      </footer>
+    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../../js/bootstrap-3.0.3.min.js"></script>
 

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>CPP - S. Nakayama</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">S. Nakayama</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../index_en/">Home (English)</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../link/">リンク (Link)</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">その他 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">著書のサポートページ・正誤表</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../support_book/Manga_MO/">マンガでわかる数理最適化</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#c">数値解析演習用　プログラミングに便利なやつ(C++)</a></li>
+            <li class="second-level"><a href="#c_1">C++で行列とベクトルを定義</a></li>
+                
+                <li class="third-level"><a href="#c_2">C++でベクトルや行列を定義するために必要な必要なヘッダーファイル</a></li>
+                <li class="third-level"><a href="#_1">ベクトル、行列の定義</a></li>
+                <li class="third-level"><a href="#_2">ベクトルや行列の値を簡単に入力する方法</a></li>
+            <li class="second-level"><a href="#_3">乱数の生成</a></li>
+                
+                <li class="third-level"><a href="#_4">乱数を生成する方法</a></li>
+                <li class="third-level"><a href="#01">0~1の乱数生成</a></li>
+            <li class="second-level"><a href="#csv">CSVに吐き出す</a></li>
+                
+                <li class="third-level"><a href="#ccsv">C++でCSVに吐き出すために必要な必要なヘッダーファイル</a></li>
+                <li class="third-level"><a href="#csv_1">CSVファイルに書き込む</a></li>
+            <li class="second-level"><a href="#_5">計算時間を測定する</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="c">数値解析演習用　プログラミングに便利なやつ(C++)<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<h3 id="c_1">C++で行列とベクトルを定義<a class="headerlink" href="#c_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<h4 id="c_2">C++でベクトルや行列を定義するために必要な必要なヘッダーファイル<a class="headerlink" href="#c_2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>#include &lt;vector&gt;
+</code></pre></div>
+<h4 id="_1">ベクトル、行列の定義<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code>int n = 2; //行列のサイズを定義
+// 行列を宣言 
+vector&lt;vector&lt;double&gt; &gt; A(n,vector&lt;double&gt; (n));//nxn行列Aを定義（変数はdouble型）
+vector&lt;double&gt; b(n) ; //n次元ベクトルbを定義
+// 実際に行列やベクトルに値を代入
+A[0][0] = 1; A[1][1] = 1; // A = [1 0;0 1]という単位行列になる
+b[0] = 1 ; b[1] ; //b=[1 1]^Tというベクトルになる
+</code></pre></div>
+行列やベクトルの第１成分はプログラム上では0からindexが始まるので注意</p>
+<p>ベクトルのサイズは
+<div class="highlight"><pre><span></span><code>int n = A.size();  //Aの行数
+int m = A[0].size();//Aの列数
+</code></pre></div>
+で読み取れます。</p>
+<h4 id="_2">ベクトルや行列の値を簡単に入力する方法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code>vector&lt;vector&lt;double&gt; &gt; A{{1,2,1,2},
+                          {2,4,2,3},
+                          {1,2,3,4},
+                          {4,3,8,1}};
+vector&lt;double&gt; b{7,7,7,7};
+</code></pre></div>
+このように書けば簡単に具体的な行列を簡単に定義できる。
+しかし、この書き方はC++11以降から対応しているため、環境によっては
+<div class="highlight"><pre><span></span><code>$g++ -std=c++11 ***.cpp
+</code></pre></div>
+とコンパイルする必要がある。</p>
+</blockquote>
+<p>参考サイト
+<a href="https://www.sejuku.net/blog/48660">https://www.sejuku.net/blog/48660</a></p>
+<h3 id="_3">乱数の生成<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<blockquote>
+<h4 id="_4">乱数を生成する方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>rand()という関数は0～32767の整数を返します。
+<div class="highlight"><pre><span></span><code>x = rand();
+</code></pre></div></p>
+<h4 id="01">0~1の乱数生成<a class="headerlink" href="#01" title="Permanent link">&para;</a></h4>
+<p>rand関数で生成される整数の最大値RAND_MAXで割ることで0~1の乱数を生成できます。ここで、rand()もRAND_MAXも整数型ですのでキャストを忘れずに
+<div class="highlight"><pre><span></span><code>x = (double)rand()/RAND_MAX;
+</code></pre></div></p>
+</blockquote>
+<p>参考サイト
+<a href="https://webkaru.net/clang/display-random-numbers-between-0-1/">https://webkaru.net/clang/display-random-numbers-between-0-1/</a></p>
+<h3 id="csv">CSVに吐き出す<a class="headerlink" href="#csv" title="Permanent link">&para;</a></h3>
+<blockquote>
+<h4 id="ccsv">C++でCSVに吐き出すために必要な必要なヘッダーファイル<a class="headerlink" href="#ccsv" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+using std::endl;
+using std::ofstream;
+</code></pre></div>
+<h4 id="csv_1">CSVファイルに書き込む<a class="headerlink" href="#csv_1" title="Permanent link">&para;</a></h4>
+<p>データを書き込むCSVファイルを指定する。
+<div class="highlight"><pre><span></span><code>ofstream ofs(&quot;hoge.csv&quot;);  // ファイルを指定する
+</code></pre></div>
+ofsという名前の変数にデータを書き込むことでhoge.csvにデータが入力されます。
+<div class="highlight"><pre><span></span><code>ofs &lt;&lt; 1 &lt;&lt; &quot;, &quot;&lt;&lt; 2 &lt;&lt; endl;
+</code></pre></div>
+otfに"1"という値を入力して","でセルを区切ります。
+endlは改行を意味します。
+例えば
+<div class="highlight"><pre><span></span><code>ofs &lt;&lt; 1 &lt;&lt; &quot;, &quot;&lt;&lt; 2 &lt;&lt; endl;
+ofs &lt;&lt; 3 &lt;&lt; &quot;, &quot;&lt;&lt; 4 &lt;&lt; endl;
+ofs &lt;&lt; 5 &lt;&lt; &quot;, &quot;&lt;&lt; 6 &lt;&lt; endl;
+</code></pre></div>
+と入力するとCSVファイルは</p>
+<p><img alt="csv1" src="../../img/csv1.png" /></p>
+<p>となります。また
+<div class="highlight"><pre><span></span><code>#include &lt;iomanip&gt;
+</code></pre></div>
+というヘッダーを加えて
+<div class="highlight"><pre><span></span><code>double z = 1.2345678901234567;
+ofs &lt;&lt; std::setprecision(16) &lt;&lt; z &lt;&lt;endl;
+</code></pre></div>
+とすると</p>
+<p><img alt="csv1" src="../../img/csv2.png" /></p>
+<p>のように、入力する桁数を指定することもできます。</p>
+<p>scientific:指数表記</p>
+<p>setprecision:小数点表記</p>
+</blockquote>
+<p>参考サイト
+<a href="https://marycore.jp/prog/cpp/stream-format-float/">https://marycore.jp/prog/cpp/stream-format-float/</a></p>
+<h3 id="_5">計算時間を測定する<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>参考サイト
+<a href="http://www.sanko-shoko.net/note.php?id=rnfd">http://www.sanko-shoko.net/note.php?id=rnfd</a></p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Copyright 2025, Shummin Nakayama.</small><br>
+            
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

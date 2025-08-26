@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
     
-    <title>マンガでわかる数理最適化 - S. Nakayama</title>
+    <title>非線形最適化法 - S. Nakayama</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -97,14 +97,14 @@
     <ul class="dropdown-menu">
         
             
-<li class="active">
-    <a href="./">マンガでわかる数理最適化</a>
+<li >
+    <a href="../Manga_MO/">マンガでわかる数理最適化</a>
 </li>
 
         
             
-<li >
-    <a href="../nonlinear-optimization-book/">非線形最適化法</a>
+<li class="active">
+    <a href="./">非線形最適化法</a>
 </li>
 
         
@@ -125,12 +125,12 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../../link/">
+                        <a rel="prev" href="../Manga_MO/">
                             <i class="fas fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li >
-                        <a rel="next" href="../nonlinear-optimization-book/">
+                    <li class="disabled">
+                        <a rel="next" >
                             Next <i class="fas fa-arrow-right"></i>
                         </a>
                     </li>
@@ -144,27 +144,23 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#_1">マンガでわかる数理最適化　（オーム社）</a></li>
-            <li class="second-level"><a href="#_2">はじめに</a></li>
+        <li class="first-level active"><a href="#python">非線形最適化法 数理的基礎とPythonによる実装　（オーム社）</a></li>
+            <li class="second-level"><a href="#_1">はじめに</a></li>
                 
-            <li class="second-level"><a href="#_3">正誤表</a></li>
+            <li class="second-level"><a href="#_2">正誤表</a></li>
                 
-            <li class="second-level"><a href="#_4">補足</a></li>
-                
-                <li class="third-level"><a href="#_5">添え字の訂正</a></li>
-                <li class="third-level"><a href="#_6">強双対定理の補足</a></li>
-                <li class="third-level"><a href="#_7">単体法は反復法か直接法か</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="_1">マンガでわかる数理最適化　（オーム社）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">はじめに<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>本サイトは，オーム社より出版された「<a href="https://www.ohmsha.co.jp/book/9784274232008/">マンガでわかる数理最適化</a>」のサポートページです．
-わかりやすさを重視して厳密性を欠いてしまい，専門的には語弊が生じるようなことや，誤植等が多々あると思います．
-このサポートページでは，それらの問題点を解消したいと思います．</p>
+<h1 id="python">非線形最適化法 数理的基礎とPythonによる実装　（オーム社）<a class="headerlink" href="#python" title="Permanent link">&para;</a></h1>
+<h2 id="_1">はじめに<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>本サイトは，オーム社より出版された「<a href="https://www.ohmsha.co.jp/book/9784274233852/">非線形最適化法 数理的基礎とPythonによる実装</a>」のサポートページです．</p>
+<p>サンプルコードは
+<a href="https://github.com/Shummin/nonlinear-optimization-book">https://github.com/Shummin/nonlinear-optimization-book</a>
+を参照してください．</p>
 <p>ここに書かれていることの他に，指摘や誤植の発見等がありましたら nakayama&lt;@&gt;rs.tus.ac.jp に連絡してください．</p>
-<h2 id="_3">正誤表<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_2">正誤表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -177,90 +173,14 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">p.54</td>
-<td align="left">１変数のグラフの中</td>
-<td align="left"><span class="arithmatex"><span class="MathJax_Preview">z = f(x)</span><script type="math/tex">z = f(x)</script></span></td>
-<td align="left"><span class="arithmatex"><span class="MathJax_Preview">y = f(x)</span><script type="math/tex">y = f(x)</script></span></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">p.60</td>
-<td align="left">(1.2)</td>
-<td align="left">　-　</td>
-<td align="left">(1.1)と合わせるならmaxとminの順番が逆です</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">p.73</td>
-<td align="left">二つ目の制約条件の中</td>
-<td align="left">　<span class="arithmatex"><span class="MathJax_Preview">a_{0+1,1}</span><script type="math/tex">a_{0+1,1}</script></span>等の添字　</td>
-<td align="left">補足参照</td>
-<td align="left"><a href="#p73">添え字の訂正</a></td>
-</tr>
-<tr>
-<td align="left">p.80</td>
-<td align="left">波線の枠の中</td>
-<td align="left"><span class="arithmatex"><span class="MathJax_Preview">(x_1,x_2,s_1,s_2,s_3)=(0,0,74,48,48)</span><script type="math/tex">(x_1,x_2,s_1,s_2,s_3)=(0,0,74,48,48)</script></span></td>
-<td align="left"><span class="arithmatex"><span class="MathJax_Preview">(x_1,x_2,s_1,s_2,s_3)=(0,0,72,48,48)</span><script type="math/tex">(x_1,x_2,s_1,s_2,s_3)=(0,0,72,48,48)</script></span></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">p.80</td>
-<td align="left">波線の枠の中</td>
-<td align="left"><span class="arithmatex"><span class="MathJax_Preview">f(18,0)=48</span><script type="math/tex">f(18,0)=48</script></span></td>
-<td align="left"><span class="arithmatex"><span class="MathJax_Preview">f(18,0)=54</span><script type="math/tex">f(18,0)=54</script></span></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">p.87</td>
-<td align="left">最後の行</td>
-<td align="left">最適 <strong>解</strong> が一致</td>
-<td align="left">最適 <strong>値</strong> が一致</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">p.89</td>
-<td align="left">双対定理の中</td>
-<td align="left">最適 <strong>解</strong> が一致する</td>
-<td align="left">最適 <strong>値</strong> が一致</td>
-<td align="left"><a href="#strong_dual">強双対定理の補足</a></td>
-</tr>
-<tr>
-<td align="left">p.95</td>
-<td align="left">3.の最適解</td>
-<td align="left"><span class="arithmatex"><span class="MathJax_Preview">(y_1,y_2)=(1,3)</span><script type="math/tex">(y_1,y_2)=(1,3)</script></span></td>
-<td align="left"><span class="arithmatex"><span class="MathJax_Preview">(y_1,y_2)=(100,300)</span><script type="math/tex">(y_1,y_2)=(100,300)</script></span></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">p.193</td>
-<td align="left"><span class="arithmatex"><span class="MathJax_Preview">Ax</span><script type="math/tex">Ax</script></span>の最後の成分</td>
-<td align="left">\sum_{i=1}^n a_{2,i} x_i</td>
-<td align="left">\sum_{i=1}^n a_{<strong>m</strong>,i} x_i</td>
+<td align="left">p.298</td>
+<td align="left">(8.72)</td>
+<td align="left"><span class="arithmatex"><span class="MathJax_Preview">\|x\|</span><script type="math/tex">\|x\|</script></span></td>
+<td align="left"><span class="arithmatex"><span class="MathJax_Preview">\|x\|_1</span><script type="math/tex">\|x\|_1</script></span></td>
 <td align="left"></td>
 </tr>
 </tbody>
-</table>
-<h2 id="_4">補足<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p><a id="p73"></a> </p>
-<h3 id="_5">添え字の訂正<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>p.73ページの例の中の添字の数字が間違っていました。以下が正しいです。
-<div class="highlight"><pre><span></span><code>a_{0+1,1}x_1 + a_{0+1,2}x_2 ≦ b_{0+1}
-a_{0+2,1}x_1 + a_{0+2,2}x_2 ≦ b_{0+2}
-a_{0+3,1}x_1 + a_{0+3,2}x_2 ≦ b_{0+3}
-</code></pre></div>
-<a id="strong_dual"></a> </p>
-<h3 id="_6">強双対定理の補足<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>本書では実行可能な双対問題（実行可能解が存在する双対問題）を解くという話の流れで，
-その際に主問題にも最適解が存在すれば良いという書き方をしました．
-線形計画問題においては，最適解の存在性を，実行可能解の存在性に置き換えてもよく，強双対定理は以下のようにも記述されます．</p>
-<p><strong>強双対定理</strong></p>
-<p><strong>主問題と双対問題がどちらも実行可能解を持つならば、どちらにも最適解が存在して、二つの問題の最適値は一致する。</strong></p>
-<h3 id="_7">単体法は反復法か直接法か<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>とある先生から単体法は反復法ではないかという指摘を受けました．
-確かに，繰り返し計算をするので反復法と呼んでも違和感はありませんし，議論すべきことかもしれません．実際に，頂点の探索の繰り返し回数を反復計算量ということもあります．
-一方で，連立一次方程式の解法としてGauss-Seidelなどの反復法があり，直接法としてガウスの消去法が挙げられます．ここで
-単体法を考えた場合，連立一次方程式の解を有限解の探索をする操作をガウスの消去法の亜種と考えることができるため，本書で単体法を直接法とみなしています．</p></div>
+</table></div>
         
         
     </div>
